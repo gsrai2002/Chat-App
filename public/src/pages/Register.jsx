@@ -24,6 +24,12 @@ function Register() {
         theme: "dark",
     };
 
+    useEffect(()=>{
+        if(localStorage.getItem('chat-app-user')){
+          navigate('/');
+        }
+      },[]);
+
     const handleSubmit = async (event) =>{
         event.preventDefault();
         if(handleValidation()){
@@ -69,7 +75,7 @@ function Register() {
             <form onSubmit={(event) => handleSubmit(event)}>
                 <div className="brand">
                     <img src={Logo} alt="Logo" />
-                    <h1>snappy</h1>
+                    <h1>Snappy</h1>
                 </div>
                 <input type="text" placeholder='Username' name='username' onChange={e=>handleChange(e)} />
                 <input type="email" placeholder='Email' name='email' onChange={e=>handleChange(e)} />
