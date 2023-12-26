@@ -7,7 +7,11 @@ const app = express();
 require("dotenv").config();
 
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
-mongoose.connect(DB).then(() =>console.log('DB connection successful'));
+mongoose.connect(DB)
+    .then(() =>console.log('DB connection successful'))
+    .catch((err) => { 
+        console.log(err.Message); 
+    });
 
 app.use(cors());
 app.use(express.json());

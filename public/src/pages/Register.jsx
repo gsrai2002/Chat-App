@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { registerRoute } from "../utils/APIRoutes";
 
-
 function Register() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
